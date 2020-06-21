@@ -2,6 +2,7 @@ This is a fork of HubbeKing's WeeChat dockerfile, twisted to my own uses.  Chanc
 
   - docker compile -t [whatever]/weechat .
   - docker run -d --rm --name weechat [whatever]/weechat
+  - The home directory is /home/weechat
   - Season with -v and -p params to taste
   - Serves one
   - docker exec -it $(docker ps -q -f 'name=weechat') tmux attach
