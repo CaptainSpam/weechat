@@ -1,14 +1,11 @@
-# Weechat in Docker [![Build Status](https://img.shields.io/docker/cloud/build/hubbeking/weechat.svg)](https://hub.docker.com/r/hubbeking/weechat)
+This is a fork of HubbeKing's WeeChat dockerfile, twisted to my own uses.  Chances are you have less use for this than you have for his original, as this just tweaks a thing or two and that's it.  Also, I kinda don't use the usual port for the relay.  I'm not sure why.
 
-Only really useful for me, because of the PGID/PUID/TZ env values. Feel free to tweak, though.
-I couldn't get it to work right with an entrypoint script so I could have them passed as envs in docker-compose...
-
-Uses linuxserver.io-style environment variables for timezone and user UID and GID. (See Dockerfile)
-
-If you really want to use it:
-  - docker run -d --name weechat hubbeking/weechat
+  - docker compile -t [whatever]/weechat .
+  - docker run -d --rm --name weechat [whatever]/weechat
+  - Season with -v and -p params to taste
+  - Serves one
   - docker exec -it $(docker ps -q -f 'name=weechat') tmux attach
 
-Or with compose:
+Or maybe with compose?
   - docker-compose up -d
   - docker-compose exec weechat tmux attach
