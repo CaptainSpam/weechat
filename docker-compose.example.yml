@@ -1,13 +1,13 @@
 version: '3'
 services:
   weechat:
-    image: hubbeking/weechat
+    image: captainspam/weechat
     build:
       context: .
     container_name: weechat
     restart: unless-stopped
     ports:
-      - 9001:9001
+      - 8002:8002
     volumes:
       - ./weechat/:/home/weechat/.weechat/
       - ./tmux.conf:/home/weechat/.tmux.conf
